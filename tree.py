@@ -20,7 +20,7 @@ class Tree:
             self._add(data, self.root)
 
     def _add(self, data, node):
-        """Method for add data to the tree
+        """ Method for add data to the tree
 
         Args:
             data (int): data to add
