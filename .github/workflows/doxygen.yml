@@ -13,8 +13,13 @@ jobs:
       - name: 📥 Checkout
         uses: actions/checkout@v3
 
+      - name: 🚀 Install Doxygen
+        run: sudo apt install doxygen
+
       - name: 📚 Generate Doxygen
-        run: doxygen
+        run: |
+          doxygen -g
+          doxygen
 
       - name: 📦 Save documentation as an artifact
         uses: actions/upload-artifact@v3
