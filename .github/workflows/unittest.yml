@@ -1,0 +1,20 @@
+name: 🚀 Run unittests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: 🚀 Run unittests
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: 🚀 Run unittests
+        shell: bash
+        run: python3 -m unittest tests.py
