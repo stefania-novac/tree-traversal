@@ -1,13 +1,13 @@
-name: 🚀 Run unittests
+name: 🚀 Run unittests on pull requests
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: [main]
+      types: [opened, reopened, synchronize]
 
 jobs:
   test:
-    name: 🚀 Run unittests
+    name: 🚀 Run unittests on pull requests
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Checkout
