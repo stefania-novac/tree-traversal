@@ -1,0 +1,23 @@
+name: 📚 Doxygen
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  doxygen:
+    name: 📚 Generate Doxygen
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v3
+
+      - name: 📚 Generate Doxygen
+        run: doxygen
+
+      - name: 📦 Save documentation as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: doxygen
+          path: html/
